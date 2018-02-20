@@ -5,7 +5,7 @@ class Volunteer(models.Model):
   first_name = models.CharField(max_length=20)
   last_name = models.CharField(max_length=30)
   bio = models.CharField(max_length=140)
-  profile_picture = models.ImageField(upload_to='mainapp/static/mainapp/images/', max_length=100, blank=True)
+  profile_picture = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
   city = models.CharField(max_length=30)
   state = models.CharField(max_length=2)
   category_list = ArrayField(models.CharField(default="", max_length=20, blank=True))
@@ -18,10 +18,10 @@ class Volunteer(models.Model):
 class Organization(models.Model):
   name = models.CharField(max_length=30)
   bio = models.CharField(max_length=140)
-  profile_picture = models.ImageField(upload_to='mainapp/static/mainapp/images/', max_length=100)
+  profile_picture = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
   city = models.CharField(max_length=30)
   state = models.CharField(max_length=2)
-  categories = ArrayField(models.CharField(max_length=20, blank=True, default="nonprofit"))
+  categories = ArrayField(models.CharField(max_length=20, blank=True))
   time_commitement = ArrayField(models.IntegerField(default=10), size=2)
   events = ArrayField(models.CharField(default="", max_length=20, blank=True))
 
