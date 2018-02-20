@@ -10,7 +10,7 @@ env:
     global:
       - secure: "Z+eJGQtgLe4ny2G77lQdm7RuXMAtgEsTFd3cB1dkhvLlTQFNZgxgQpeZVryxZK8NYJ2dRp4ZbNMzOShBApx2XjFKqnXR4X7la8ewARJi8OctY+g2aC8L1c5OzX957TiYDtBOu1QabrKzO2K0PJbNtiLvK9COTmL/Z1XBR4EZiZR64vvvrNJFk84WvTn8AOZ0D8qd5kJIgv9HJllsjV6rZiaiyiqRy125JZ9EKlGr/YUsaDi3uP0OKPGbYrIdqXZWpVHgRKgifNZgCUXfUnV93PBKqNUvxXjs4ZcNY65ZCGgB0IPqkrpUZk+FUkZ3Af77JvXjhoT5JjzfY6zjDvYQHQSlWW1Z+m9Lt67pkJU6WJThIEk7E+8wIjH4LHwgqQ+jWQkXddIMZfNu6mW32/ZIaEz7QBMEPlW+9hXO3NuSKSO2CR6dojbobmmnSxBTzZ1AaTWsvC7jk/NK4lDZvmq+VdMNVu98G0fl89+euXDPN0b7s1IDDR1xmm/fJayluQfaqceE/YFNRDQty3c1aWa/xMQsK7Y3m0qdzkKV7S1faGp8szW2LhrBvHhGE8YX9XPGUbxqOuH6bldGkeLujqmTBOYXqbCmStdndlxbLvJf1UGsJfBybZv+injWeTHVuRjf5OvuNEgenWsD0+28ZYeODGNs4knFn0df/Rjj60NCiiQ=" 
       - DJANGO=2.0.2 DB=postgresql DEBUG=False 
-
+      - ALLOWED_HOSTS=.localhost, .herokuapp.com
 
 install:
 - pip install -r requirements.txt
