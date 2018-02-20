@@ -1,5 +1,6 @@
 language: python
-python: 3.6.4
+python: 
+  - "3.6.4"
 services: postgresql
 env:
   - DJANGO=2.0.2 DB=postgresql DEBUG=False
