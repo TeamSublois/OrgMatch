@@ -13,3 +13,6 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE cidb;" -U postgres
+
+script: 
+  - python manage.py test mainapp
