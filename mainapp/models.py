@@ -39,7 +39,7 @@ class Volunteer(models.Model):
     city = models.CharField(max_length=30)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     category_list = models.ManyToManyField(Category)
-    fav_org_list = models.ManyToManyField(Organization)
+    fav_org_list = models.ManyToManyField(Organization, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
