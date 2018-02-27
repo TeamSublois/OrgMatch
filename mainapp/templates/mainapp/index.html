@@ -1,2 +1,23 @@
-<h1>OrgMatch Home Page</h1>
-<h3>A web app by Team s u b l o i s </h3>
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+	{% load static %}
+	<meta charset='UTF-8'/>
+	<title>results page</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}" />
+</head>
+<body>
+	<ul class="navigation">
+		<li class = 'home'><button href="google.com">home</button></li>
+		<li class = 'browse'><button href="google.com">browse</button></li>
+		<li class = 'searchbar'><input type="text" placeholder="Search.."></li>
+		<li class = 'me'><button href="google.com">me</button></li>
+	</ul>
+	<div class='separator'> </div>
+	<h1>OrgMatch Home Page</h1>
+	<h3>A web app by Team s u b l o i s </h3>
+</body>
+</html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang='en'>
 <head>
 	<meta charset='UTF-8'/>
 	<title>results page</title>
-	<link rel='stylesheet' href='styles.css'/>
+	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}" />
 </head>
 <body>
 	<ul class="navigation">
@@ -13,16 +14,29 @@
 		<li class = 'me'><button href="google.com">me</button></li>
 	</ul>
 	<div class='separator'> </div>
+	
+	{% if all_organizations_list %}
+
+	{% for organization in all_organizations_list %}
+
 	<div class='results'>
 		<div class='listing'>
-			<a href="http://www.google.com">
-				<img src="https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png" />
+			<a href="/{{organization.id}}}/">
+				<img src="{{organization.profile_picture}}" />
 				<div class='information'>
-					<h1> org information</h1>
-					<p> more info </p>
+					<h1>{{organization.name}}</h1>
+					<p>{{organization.bio}} </p>
 				</div>
 			</a>
 		</div>
-	</div>
+	</div> 
+
+	{% endfor %}
+
+	{% else %}
+	<p>No polls are available.</p>
+	{% endif %}
+	<p> fuck a shit </p>
+
 </body>
 </html>
