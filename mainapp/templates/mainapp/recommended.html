@@ -7,24 +7,23 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}" />
 </head>
 <body>
-	<ul class="navigation">
-		<li class = 'home'><button href="google.com">home</button></li>
-		<li class = 'browse'><button href="google.com">browse</button></li>
-		<li class = 'searchbar'><input type="text" placeholder="Search.."></li>
-		<li class = 'me'><button href="google.com">me</button></li>
-	</ul>
-	<div class='separator'> </div>
+	{% include "mainapp/nav.html" %}
 	
 	{% if all_organizations_list %}
 
 	{% for organization in all_organizations_list %}
 
 	<div class='results'>
+		<div class='title'>
+			<h1> recommended for you! </h1>
+
+		</div>
 		<div class='listing'>
 			<a href="/{{organization.id}}}/">
-				<img src="{{organization.profile_picture}}" />
+				<img src="{{organization.profile_picture.url}}" />
 				<div class='information'>
 					<h1>{{organization.name}}</h1>
+					<h2>{{organization.city}}</h2>
 					<p>{{organization.bio}} </p>
 				</div>
 			</a>
@@ -36,7 +35,6 @@
 	{% else %}
 	<p>No polls are available.</p>
 	{% endif %}
-	<p> fuck a shit </p>
 
 </body>
 </html>
