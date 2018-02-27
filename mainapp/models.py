@@ -27,6 +27,10 @@ class Organization(models.Model):
   state = models.ForeignKey(State, on_delete=models.CASCADE)
   categories = models.ManyToManyField(Category)
   minimum_time_commitment = models.IntegerField(default=10, blank=True)
+  facebook = models.URLField(null=True, blank=True)
+  twitter = models.URLField(null=True, blank=True)
+  youtube = models.URLField(null=True, blank=True)
+  instagram = models.URLField(null=True, blank=True)
 
   def __str__(self):
       return self.name
