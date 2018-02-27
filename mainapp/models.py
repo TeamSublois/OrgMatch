@@ -27,3 +27,10 @@ class Organization(models.Model):
 
   def __str__(self):
       return self.name
+
+class Category(models.Model):
+  name = models.CharField(max_length=50)
+  cover_image = models.ImageField(upload_to='static/mainapp/images/')
+
+  def __str__(self):
+    return self.name
