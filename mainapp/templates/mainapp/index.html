@@ -21,50 +21,15 @@
 				</button>
 			</div>
 			<section class="columns">
-				<div class="column">
-					<div class="category">
-						<input type="image" src="https://i.ytimg.com/vi/7K0uS9LpKgU/maxresdefault.jpg" name="domestic" class="catImg"/>
-						<button class="catName">Domestic</button>
-						<h4>Learn to abuse domestic animals!</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-					<div class="category">
-						<input type="image" src="https://i.ytimg.com/vi/aICUDVA1ZiA/maxresdefault.jpg" name="domestic" class="catImg"/>
-						<button class="catName">Anime</button>
-						<h4>Learn how to shut yourself in!</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-				</div>
-				<div class="column">
-					<div class="category">
-						<input type="image" src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA2NC80NDcvb3JpZ2luYWwvYmlvbG9naWNhbC1oaWVyYXJjaHkuanBn" name="domestic" class="catImg"/>
-						<button class="catName">Biology</button>
-						<h4>Ever wanted to learn how to wipe out a species?</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-					<div class="category">
-						<input type="image" src="http://jondavidsongroup.com/jondcon/uploads/2013/05/business_ethnics.jpg" name="domestic" class="catImg"/>
-						<button class="catName">Business</button>
-						<h4>Thumbs up to you if you even like this lmao</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-				</div>
-				<div class="column">
-					<div class="category">
-						<input type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOoL8ewL8J5blRQsFp7SRulHo8se3wv77w1mTeaD6XSs_FhSSIRA" name="domestic" class="catImg"/>
-						<button class="catName">Technical</button>
-						<h4>Wait a second...</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-					<div class="category">
-						<input type="image" src="https://ih0.redbubble.net/image.483409309.0262/flat,800x800,070,f.u1.jpg" name="domestic" class="catImg"/>
-						<button class="catName">Memes</button>
-						<h4>Please send help this isn't a joke I actually need some counseling.</h4>
-						<h4 class="nearOrg">Nearest organization to you: --- </h4>
-					</div>
-				</div>
+				{% if all_categories_list %}
+					<ul>
+						{% for category in all_categories_list %}
+							<li>
+								<a href="/{{ category.id }}/">{{ category.name }}</a>
+							</li>
+						{% endfor %}
+					</ul>
 			</section>
-
 			<div class="seeMore">
 				<button class="see">
 					SEE MORE
