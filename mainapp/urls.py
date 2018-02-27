@@ -6,4 +6,5 @@ app_name = 'mainapp'
 urlpatterns = [
     # path('', views.IndexView.as_view(), name='index')
     path('', views.index, name='index'),
+    path('org/<int:id>', views.organization, name='org')
 ]
