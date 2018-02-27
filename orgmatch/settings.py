@@ -80,9 +80,17 @@ WSGI_APPLICATION = 'orgmatch.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    # 'default': dj_database_url.config(
+    #     default=config('DATABASE_URL')
+    # )
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'orgmatch',
+        'USER': 'admin',
+        'PASSWORD': '1234qwer',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
 # DATABASES = {
 #     'default': {
