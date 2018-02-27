@@ -18,16 +18,6 @@ class Category(models.Model):
         return self.name
 
 
-class Event(models.Model):
-    name = models.CharField(max_length=20)
-    description = models.CharField(max_length=280)
-    date = models.DateTimeField()
-    event_image = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
-    
-
-    def __str__(self):
-        return self.name
-
 class Organization(models.Model):
   name = models.CharField(max_length=30)
   bio = models.CharField(max_length=140)
@@ -36,10 +26,21 @@ class Organization(models.Model):
   state = models.ForeignKey(State, on_delete=models.CASCADE)
   categories = models.ManyToManyField(Category)
   minimum_time_commitment = models.IntegerField(default=10, blank=True)
-  events = models.ManyToManyField(Event)
+  # events = models.ManyToManyField(Event)
 
   def __str__(self):
       return self.name
+
+
+class Event(models.Model):
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=280)
+    date = models.DateTimeField()
+    event_image = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 class Volunteer(models.Model):
