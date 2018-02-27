@@ -2,6 +2,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class State(models.Model):
     name = models.CharField(max_length=30)
     abbreviation = models.CharField(max_length=2)
@@ -12,7 +13,7 @@ class State(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
-    cover_image = models.ImageField(upload_to='static/mainapp/images/')
+    cover_image = models.ImageField(upload_to='mainapp/images/category/')
 
     def __str__(self):
         return self.name
@@ -21,12 +22,11 @@ class Category(models.Model):
 class Organization(models.Model):
   name = models.CharField(max_length=30)
   bio = models.CharField(max_length=140)
-  profile_picture = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
+  profile_picture = models.ImageField(upload_to='mainapp/images/organization/', max_length=100, blank=True)
   city = models.CharField(max_length=30)
   state = models.ForeignKey(State, on_delete=models.CASCADE)
   categories = models.ManyToManyField(Category)
   minimum_time_commitment = models.IntegerField(default=10, blank=True)
-  # events = models.ManyToManyField(Event)
 
   def __str__(self):
       return self.name
@@ -36,7 +36,7 @@ class Event(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=280)
     date = models.DateTimeField()
-    event_image = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
+    event_image = models.ImageField(upload_to='mainapp/images/event/', max_length=100, blank=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Event(models.Model):
 class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=140)
-    profile_picture = models.ImageField(upload_to='static/mainapp/images/', max_length=100, blank=True)
+    profile_picture = models.ImageField(upload_to='mainapp/images/volunteer/', max_length=100, blank=True)
     city = models.CharField(max_length=30)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     category_list = models.ManyToManyField(Category)
