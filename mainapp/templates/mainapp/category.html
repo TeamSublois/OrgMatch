@@ -2,25 +2,17 @@
 <html>
 	<head>
 		{% load static %}
-		
-		<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
-		<title>Home</title>
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/category.css' %}">
+		<title>Categories</title>
 	</head>
 
 	<body>
-		<div class="homepage">
+		<div class="catgories">
 			<div class="navbar">
 			</div>
-			<div class="heading">
-				<div class="title">
-					OrgMatch Home Page
-				</div>
-				<div class="tagline">
-					A web app by Team  s u b l o i s
-				</div>
-				<button class="signUp">
-					Signup
-				</button>
+			<div class="title">
+				Browse All Categories
 			</div>
 			<section class="columns">
 				{% if all_categories_list %}
@@ -36,11 +28,6 @@
     				<p>No categories exist.</p>
 				{% endif %}
 			</section>
-			<div class="seeMore">
-				<button class="see" href="./home.html">
-					SEE MORE
-				</button>
-			</div>
 		</div>
 	</body>
 </html>
