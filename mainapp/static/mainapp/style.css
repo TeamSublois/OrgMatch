@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995DA;  /* Blue */
+  padding: 20px 0;
+  display:flex;
+  justify-content: center;
+}
+
+.menu {
+  border: 1px solid #fff;  /* For debugging */
+  width: 900px;
+  display:flex;
+  justify-content: space-around;
+}
+
+.listing {
+	max-width: 1000px;
+	max-height: 200px;
+	border: 1px solid black;
+	display:flex;
+	justify-content: space-around;
+	border-radius: 25px;
+	margin: 5px;
+}
+
+.results {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.information {
+	margin:5px;
+	padding: 20px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+a {
+	display:flex;
+
+}
