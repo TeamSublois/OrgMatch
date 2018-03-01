@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static %} 
 <html lang='en'>
 <head>
 	<meta charset='UTF-8'/>
 	<title>results page</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'mainapp/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
 <body>
 	{% include "mainapp/nav.html" %}
 	
-	{% if all_organizations_list %}
-
-	{% for organization in all_organizations_list %}
-
+	
 	<div class='results'>
 		<div class='title'>
 			<h1> recommended for you! </h1>
 
 		</div>
+		{% if all_organizations_list %}
+
+	{% for organization in all_organizations_list %}
+
 		<div class='listing'>
-			<a href="/{{organization.id}}}/">
+			<a href="/{{organization.id}}/">
 				<img src="{{organization.profile_picture.url}}" />
 				<div class='information'>
 					<h1>{{organization.name}}</h1>
@@ -28,13 +29,14 @@
 				</div>
 			</a>
 		</div>
-	</div> 
-
-	{% endfor %}
+		{% endfor %}
 
 	{% else %}
 	<p>No polls are available.</p>
 	{% endif %}
+	</div> 
+
+	
 
 </body>
 </html>

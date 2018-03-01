@@ -71,16 +71,20 @@ ul {
 
 }
 
-.searchbar {
-	margin-left: auto;
-	margin-right: auto;
+.search {
+	margin: 10px;
 }
 
 .home {
-margin-right: 20px;
+	margin: 10px;
 }
 .me {
+	margin-left: auto;
 	margin-right: 20px;
+}
+
+.browse{
+	margin: 10px;
 }
 
 .separator{
