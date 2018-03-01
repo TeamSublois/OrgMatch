@@ -3,14 +3,14 @@
 	<head>
 		{% load static %}
 		
-		<link rel="stylesheet" type="text/css" href="{% static 'mainapp/index.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'mainapp/home.css' %}" />
 		<title>Home</title>
 	</head>
 
 	<body>
 		<div class="homepage">
 			<div class="navbar">
-			</div>
+			</div>ss
 			<div class="heading">
 				<div class="title">
 					OrgMatch Home Page
@@ -28,7 +28,7 @@
 						{% for category in all_categories_list %}
 							<li>
 								<a href="/{{ category.id }}/">{{ category.name }}</a>
-								<img src="{{ category.image.url }}">
+								<img src="{{ category.cover_image.url }}">
 							</li>
 						{% endfor %}
 					</ul>

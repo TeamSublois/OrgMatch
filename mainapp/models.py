@@ -36,14 +36,6 @@ class Organization(models.Model):
       return self.name
 
 
-class Category(models.Model):
-  name = models.CharField(max_length=50)
-  cover_image = models.ImageField(upload_to='static/mainapp/images/')
-
-  def __str__(self):
-    return self.name
-
-
 class Event(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=280)
