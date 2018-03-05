@@ -1,3 +1,15 @@
+<!--DOCTYPE html -->
+{% load static %}
+
+<html>
+<head>
+<link rel='stylesheet' href='{% static "css/style.css" %}' />
+<style>
+</style>
+</head>
+<body>
+<h1>OrgMatch Home Page</h1> 
+<h3>A web app by Team s u b l o i s </h3>
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
@@ -7,3 +19,6 @@
   <a href="{% url 'login' %}">login</a>
 {% endif %}
 {% endblock %}
+</body>
+</html>
+
