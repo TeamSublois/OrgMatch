@@ -53,7 +53,9 @@ h4 {
 
 .columns {
 	position: relative;
-	padding-top: 625px;
+	padding-top: 550px;
+	padding-right: 550px;
+	padding-left: 550px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -63,7 +65,7 @@ h4 {
 .column {
 	flex: 1;
 	margin: 1px;
-	padding-top: 10px;
+	padding: 10px;
 }
 
 .category {

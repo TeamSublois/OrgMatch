@@ -12,7 +12,17 @@ def index(request):
 
 
 def category(request):
-	all_categories_list = Category.objects.order_by('name')[:1000]
-	context = {'all_categories_list':all_categories_list}
+	all_categories_list = Category.objects.order_by('name')
+
+	first_col = all_categories_list[0:int(len(all_categories_list)/3)]
+	second_col = all_categories_list[int(len(all_categories_list)/3):int(2*(len(all_categories_list)/3))]
+	third_col = all_categories_list[int(2*(len(all_categories_list)/3)):]
+
+	context = {
+		'all_categories_list':all_categories_list,
+		'first_col':first_col,
+		'second_col':second_col,
+		'third_col':third_col
+	}
 
 	return render(request, 'mainapp/category.html', context)

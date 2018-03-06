@@ -24,14 +24,14 @@
 			</div>
 			<section class="columns">
 				{% if all_categories_list %}
-					<ul>
+					<div class="column">
 						{% for category in all_categories_list %}
 							<div class="category">
 								<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
 								<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
 							</div>
 						{% endfor %}
-					</ul>
+					</div>
 				{% else %}
     				<p>No categories exist.</p>
 				{% endif %}

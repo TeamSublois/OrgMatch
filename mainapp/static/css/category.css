@@ -28,34 +28,20 @@ h4{
 	background: #d9d9d9;
 }
 
-.heading{
-	background: #f18c8c;
-	position: absolute;
-	right: 0;
-	left: 0;
-	text-align: center;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .title{
-	padding-top: 120px;
-	font-size: 100px;
-	font-family: Arial;
-	font-weight: bold;
-}
-
-.tagline{
-	padding-top: 5px;
-	font-size: 50px;
+	justify-content: center;
+	text-align: center;
+	padding-top: 60px;
+	font-size: 70px;
 	font-family: Arial;
 	font-weight: bold;
 }
 
 .columns {
 	position: relative;
-	padding-top: 625px;
-	padding-right: 400px;
-	padding-left: 400px;
+	padding-top: 60px;
+	padding-right: 200px;
+	padding-left: 200px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -106,23 +92,4 @@ h4{
 	font-family: Arial;
 	font-weight: bolder;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.seeMore {
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-}
-
-.see {
-	outline: 0;
-	background: #ffc800;
-	width: 7%;
-	border: 0;
-	padding: 15px;
-	border-radius: 6px;
-	font-size: 15px;
-	font-family: Arial;
-	font-weight: bold;
-	color: #2149b0; 
 }
