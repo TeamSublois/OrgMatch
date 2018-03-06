@@ -49,6 +49,10 @@ a {
 
 }
 
+.listing a {
+	min-width: 500px;
+
+}
 .navigation {
 	position:fixed;
 	width:100%;
@@ -58,7 +62,7 @@ a {
   padding: 0 10px;
   border: 1px solid rgba(238,238,238 ,1);
   border-radius: 5px;
-  background: pink;
+  background: gray;
   color: #fff;
   font-size: 0.9em;
   box-shadow: 5px 10px 20px -20px rgba(59,89,153 ,1)
@@ -66,10 +70,30 @@ a {
 }
 
 ul {
-	padding: 0;
-	list-style: none;
-
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
 
 .search {
 	margin: 10px;
@@ -89,4 +113,10 @@ ul {
 
 .separator{
 	height:50px;
+}
+
+img {
+	object-fit: cover;
+	max-height: 200px;
+	max-width: 200px;
 }
