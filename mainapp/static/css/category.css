@@ -6,7 +6,7 @@ h4{
 	margin-top: 5px;
 	margin-bottom: 5px;
 	position: relative;
-	font-family: Arial;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 13px;
 	background: #00848a;
@@ -33,7 +33,7 @@ h4{
 	text-align: center;
 	padding-top: 60px;
 	font-size: 70px;
-	font-family: Arial;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 }
 
@@ -55,29 +55,16 @@ h4{
 }
 
 .category {
-	height: 390px;
+	height: 330px;
+	text-align: center;
+	position: relative; 
 }
 
 .catImg {
 	width: 100%;
 	height: 250px;
-	border-radius: 5px;
+	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.signUp {
-	outline: 0;
-	background: #ffc800;
-	width: 7%;
-	border: 0;
-	padding: 15px;
-	margin-top: 85px;
-	margin-bottom: 70px;
-	border-radius: 6px;
-	font-size: 15px;
-	font-family: Arial;
-	font-weight: bold;
-	color: #2149b0; 
 }
 
 .catName {
@@ -87,7 +74,7 @@ h4{
 	border: 5px;
 	margin-top: 5px;
 	padding: 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 20px;
 	font-family: Arial;
 	font-weight: bolder;
