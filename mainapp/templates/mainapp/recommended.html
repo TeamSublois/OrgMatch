@@ -5,6 +5,8 @@
 	<meta charset='UTF-8'/>
 	<title>results page</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+
 </head>
 <body>
 	{% include "mainapp/nav.html" %}
@@ -12,7 +14,7 @@
 	
 	<div class='results'>
 		<div class='title'>
-			<h1> recommended for you! </h1>
+			Recommended For You
 
 		</div>
 	{% if all_organizations_list %}
@@ -24,7 +26,7 @@
 				{% if organization.profile_picture %} 
 				<img src="{{organization.profile_picture.url}}" />
 				{% else %}
-				<img src = "/mainapp/static/images/defaultprofilepic.jpeg" />
+				<img src = "/static/images/defaultprofilepic.jpeg" />
 				{% endif %}
 				<div class='information'>
 					<h1>{{organization.name}}</h1>
