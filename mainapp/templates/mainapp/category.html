@@ -3,6 +3,8 @@
 	<head>
 		{% load static %}
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 		<link rel="stylesheet" type="text/css" href="{% static 'css/category.css' %}">
 		<title>Categories</title>
 	</head>
@@ -14,36 +16,22 @@
 			<div class="title">
 				Browse All Categories
 			</div>
-			<section class="columns">
-				{% if all_categories_list %}
-					<div class="column">
-						{% for category in first_col %}
-							<div class="category">
-								<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
-								<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
-							</div>
-						{% endfor %}
-					</div>
-					<div class="column">
-						{% for category in second_col %}
-							<div class="category">
-								<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
-								<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
-							</div>
-						{% endfor %}
-					</div>
-					<div class="column">
-						{% for category in third_col %}
-							<div class="category">
-								<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
-								<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
-							</div>
-						{% endfor %}
-					</div>
-				{% else %}
-    				<p>No categories exist.</p>
-				{% endif %}
-			</section>
+			<div class="columns">
+				<div class="container">
+					{% if all_categories_list %}
+						<div class="row">
+							{% for category in all_categories_list %}
+								<div class="col-md-4 category">
+									<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
+									<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
+								</div>
+							{% endfor %}
+						</div>
+					{% else %}
+						<p>No categories exist.</p>
+					{% endif %}
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

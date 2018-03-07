@@ -53,32 +53,19 @@ h4 {
 
 .columns {
 	position: relative;
-	padding-top: 550px;
-	padding-right: 550px;
-	padding-left: 550px;
+	padding-top: 600px;
+	padding-bottom: 60px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	margin: 5px 0;
 }
 
-.column {
-	flex: 1;
-	margin: 1px;
-	padding: 10px;
-}
-
-.category {
-	height: 340px;
-	text-align: center;
-	position: relative;
-}
-
 .catImg {
 	width: 100%;
 	min-width: 270px;
 	height: 250px;
-	border-radius: 5px;
+	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -107,7 +94,7 @@ h4 {
 	margin:0 auto;
 	margin-top: 5px;
 	padding: 5px;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 20px;
 	font-family: Arial;
 	font-weight: bolder;

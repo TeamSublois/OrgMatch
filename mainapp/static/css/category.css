@@ -40,8 +40,6 @@ h4{
 .columns {
 	position: relative;
 	padding-top: 60px;
-	padding-right: 200px;
-	padding-left: 200px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -55,9 +53,8 @@ h4{
 }
 
 .category {
-	height: 330px;
 	text-align: center;
-	position: relative; 
+	padding-bottom: 40px;
 }
 
 .catImg {
