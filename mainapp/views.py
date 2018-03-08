@@ -1,17 +1,18 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from .forms import UserForm, VolunteerForm
 
 
 def index(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    user = request.user
+    context = {'user': user}
 
-
-def login(request):
-    template = loader.get_template('login.html')
-    return HttpResponse(template.render())
+    return render(request, 'home.html', context)
 
 
 def register(request):
@@ -44,8 +45,43 @@ def register(request):
                 'registered': registered,
                 }
 
-    # context = RequestContext(request, context)
-
-    # template = loader.get_template('register.html')
     return render(request, 'register.html', context)
-    # return HttpResponse(template.render(context))
+
+
+# def user_login(request):
+#     if request.method == "POST":
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+
+#         user = authenticate(username=username, password=password)
+
+#         if user:
+#             if user.is_active:
+#                 login(request, user)
+#                 return HttpResponseRedirect(reverse('index'))
+#             else:
+#                 # return HttpResponse("Account not active")
+#                 return HttpResponseRedirect(reverse('mainapp:user_login'))
+#         else:
+#             print("someone tried to login and failed")
+#             print("Username: {} and password {}:".format(username, password))
+#             # return HttpResponse("invalid login details supplied")
+#             # return HttpResponseRedirect(reverse('mainapp:user_login'))
+#             messages.error(request,'username or password not correct')
+#             return redirect('mainapp:user_login')
+#     else:
+#         return render(request, 'login.html')
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
+
+
+@login_required
+def special(request):
+    user = request.user
+    context = {'user': user}
+
+    return render(request, 'special.html', context)

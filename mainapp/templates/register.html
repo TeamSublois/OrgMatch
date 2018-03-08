@@ -4,9 +4,10 @@
 
 {% block content %}
 <h2>Sign up</h2>
-    user.is_authenticated is {{ registered }}
+
     {% if registered %}
         <h1>thanks for registering!</h1>
+        <a href="{% url 'mainapp:user_login' %}">login</a>
     {% else %}
         <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
