@@ -6,7 +6,7 @@
 
     {% if registered %}
         <h1>thanks for registering!</h1>
-        <a href="{% url 'mainapp:user_login' %}">login</a>
+        <a href="{% url 'login' %}">login</a>
     {% else %}
         <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
