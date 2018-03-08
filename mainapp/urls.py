@@ -6,5 +6,7 @@ app_name = 'mainapp'
 urlpatterns = [
     path('', views.index, name='index'),
     path('index/', views.index, name='index'),
-    path('recommended/', views.recommended, name='recommended')
+    path('recommended/', views.recommended, name='recommended'),
+    path('category/', views.category, name='category')
+
 ]
