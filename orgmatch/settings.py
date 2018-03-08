@@ -24,11 +24,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w*_eg$=m6%7fu@4(yu0m$8e^$@a=l4)ar)tjby==bo*&^qn&+o'
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
-
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -80,8 +78,8 @@ WSGI_APPLICATION = 'orgmatch.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgres://mntbsueosnjydq:19908e6363a8e8520f8acd696dc1c5c7595910fad12dd3e9daf053cfe4521451@ec2-54-83-37-223.compute-1.amazonaws.com:5432/d33gnigrakk46u'
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
     )
 }
 

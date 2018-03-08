@@ -1,5 +1,15 @@
-
-
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+}
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+}
 body {
 	background: #e8e8e8;
 }
@@ -16,6 +26,7 @@ body {
 	text-align: center;
 	font-size: 70px;
 	padding: 60px;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 }
 
@@ -34,6 +45,7 @@ body {
 	margin: 10px;
 	background: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-decoration: none;
 }
 
 .results {
@@ -51,6 +63,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	max-width: 750px;
+
 }
 
 a {
@@ -62,7 +75,7 @@ a {
 
 .listing a {
 	width: auto;
-
+	text-decoration: none;
 }
 .navigation {
 	position:fixed;
@@ -105,22 +118,6 @@ li a:hover {
     background-color: #111;
 }
 
-
-.search {
-	margin: 10px;
-}
-
-.home {
-	margin: 10px;
-}
-.me {
-	margin-left: auto;
-	margin-right: 20px;
-}
-
-.browse{
-	margin: 10px;
-}
 
 .separator{
 	height:50px;
