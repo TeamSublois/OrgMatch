@@ -1,4 +1,3 @@
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -57,5 +56,4 @@ class Volunteer(models.Model):
     fav_org_list = models.ManyToManyField(Organization, blank=True)
 
     def __str__(self):
-        # return "%s %s" % (self.first_name, self.last_name)
         return self.user.username

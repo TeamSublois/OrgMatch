@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'/>
+	<title>Recommendations</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+
+</head>
+<body>
+	{% include "mainapp/nav.html" %}
+	
+	
+	<div class='results'>
+		<div class='title'>
+			Recommended For You
+
+		</div>
+	{% if all_organizations_list %}
+
+	{% for organization in all_organizations_list %}
+
+		<div class='listing'>
+			<a href="/{{organization.id}}/">
+				{% if organization.profile_picture %} 
+				<img src="{{organization.profile_picture.url}}" />
+				{% else %}
+				<img src = "/static/images/defaultprofilepic.jpeg" />
+				{% endif %}
+				<div class='information'>
+					<h1>{{organization.name}}</h1>
+					<h2>{{organization.city}}</h2>
+					<p>{{organization.bio}} </p>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+
+	{% else %}
+	<p>No polls are available.</p>
+	{% endif %}
+	</div> 
+
+
+</body>
+</html>

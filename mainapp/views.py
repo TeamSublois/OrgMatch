@@ -1,11 +1,14 @@
+from django.http import HttpResponse
+from django.template import Context, loader
+from .models import Organization
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext, loader
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
 from .forms import UserForm, VolunteerForm
+from .models import Category, Organization
 
 
 def index(request):
@@ -48,31 +51,6 @@ def register(request):
     return render(request, 'register.html', context)
 
 
-# def user_login(request):
-#     if request.method == "POST":
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-
-#         user = authenticate(username=username, password=password)
-
-#         if user:
-#             if user.is_active:
-#                 login(request, user)
-#                 return HttpResponseRedirect(reverse('index'))
-#             else:
-#                 # return HttpResponse("Account not active")
-#                 return HttpResponseRedirect(reverse('mainapp:user_login'))
-#         else:
-#             print("someone tried to login and failed")
-#             print("Username: {} and password {}:".format(username, password))
-#             # return HttpResponse("invalid login details supplied")
-#             # return HttpResponseRedirect(reverse('mainapp:user_login'))
-#             messages.error(request,'username or password not correct')
-#             return redirect('mainapp:user_login')
-#     else:
-#         return render(request, 'login.html')
-
-
 @login_required
 def user_logout(request):
     logout(request)
@@ -85,3 +63,28 @@ def special(request):
     context = {'user': user}
 
     return render(request, 'special.html', context)
+
+
+def index(request):
+    all_categories_list = Category.objects.order_by('name')[:3]
+    context = {'all_categories_list':all_categories_list}
+
+    return render(request, 'mainapp/home.html', context)
+
+
+def recommended(request):
+
+    all_organizations_list = Organization.objects.order_by('city')[:100]
+    context = {'all_organizations_list': all_organizations_list,}
+
+    return render(request, 'mainapp/recommended.html', context)
+
+
+def category(request):
+    all_categories_list = Category.objects.order_by('name')
+
+    context = {
+        'all_categories_list':all_categories_list
+    }
+
+    return render(request, 'mainapp/category.html', context)

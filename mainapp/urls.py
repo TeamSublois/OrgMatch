@@ -6,5 +6,7 @@ app_name = 'mainapp'
 urlpatterns = [
     path('', views.index, name='index'),
     url(r'^register/$', views.register, name='register'),
-    # url(r'^user_login/', views.user_login, name='user_login'),
+    path('index/', views.index, name='index'),
+    path('recommended/', views.recommended, name='recommended'),
+    path('category/', views.category, name='category')
 ]
