@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -21,8 +22,7 @@ class Category(models.Model):
 class Organization(models.Model):
     name = models.CharField(max_length=30)
     bio = models.CharField(max_length=140)
-    profile_picture = models.ImageField(upload_to='mainapp/images/organization/',
-                                        max_length=100, blank=True)
+    profile_picture = models.ImageField(upload_to='mainapp/images/organization/', max_length=100, blank=True)
     city = models.CharField(max_length=30)
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category)
@@ -40,8 +40,7 @@ class Event(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=280)
     date = models.DateTimeField()
-    event_image = models.ImageField(upload_to='mainapp/images/event/',
-                                    max_length=100, blank=True)
+    event_image = models.ImageField(upload_to='mainapp/images/event/', max_length=100, blank=True)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -50,13 +49,13 @@ class Event(models.Model):
 
 class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=140)
-    profile_picture = models.ImageField(upload_to='mainapp/images/volunteer/',
-                                        max_length=100, blank=True)
-    city = models.CharField(max_length=30)
-    state = models.ForeignKey(State, on_delete=models.CASCADE)
-    category_list = models.ManyToManyField(Category)
+    bio = models.CharField(max_length=140, default="My bio...")
+    profile_picture = models.ImageField(upload_to='mainapp/images/volunteer/', max_length=100, blank=True)
+    city = models.CharField(max_length=30, default="La Jolla")
+    state = models.ForeignKey(State, on_delete=models.CASCADE, default=1)
+    category_list = models.ManyToManyField(Category, blank=True)
     fav_org_list = models.ManyToManyField(Organization, blank=True)
 
     def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        # return "%s %s" % (self.first_name, self.last_name)
+        return self.user.username

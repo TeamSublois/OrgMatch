@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<h2>Sign up</h2>
+    user.is_authenticated is {{ registered }}
+    {% if registered %}
+        <h1>thanks for registering!</h1>
+    {% else %}
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ volunteer_form.as_p }}
+        <button type="submit">Register</button>
+    {% endif %}
+  </form>
+{% endblock %}
