@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from .models import Organization
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import RequestContext, loader
 from django.shortcuts import render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -48,21 +47,13 @@ def register(request):
                 'registered': registered,
                 }
 
-    return render(request, 'register.html', context)
+    return render(request, 'mainapp/register.html', context)
 
 
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
-
-
-@login_required
-def special(request):
-    user = request.user
-    context = {'user': user}
-
-    return render(request, 'special.html', context)
 
 
 def index(request):

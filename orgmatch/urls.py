@@ -22,11 +22,9 @@ from django.conf.urls import url
 from mainapp import views
 
 urlpatterns = [
-    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^', include('mainapp.urls')),
-    # url(r'^login/$', views.user_logout, name='login'),
     path('a/', include('django.contrib.auth.urls'))
 ]
 
