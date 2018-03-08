@@ -1,14 +1,16 @@
-<!--DOCTYPE html -->
-{% load static %}
-
-<html>
+<!DOCTYPE html>
+<html lang='en'>
 <head>
-<link rel='stylesheet' href='{% static "css/style.css" %}' />
-<style>
-</style>
+
+	{% load static %}
+	<meta charset='UTF-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Home</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-<h1>OrgMatch Home Page</h1> 
-<h3>A web app by Team s u b l o i s </h3>
+	{% include "mainapp/nav.html" %}
+	<h1>OrgMatch Home Page</h1>
 </body>
-</html>
+</html>    

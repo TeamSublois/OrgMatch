@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import Context, loader
+from .models import Organization
 from django.shortcuts import render
 from .models import Category, Organization
 
@@ -10,6 +11,12 @@ def index(request):
     
     return render(request, 'mainapp/home.html', context)
 
+def recommended(request):
+
+	all_organizations_list = Organization.objects.order_by('city')[:100]
+	context = {'all_organizations_list': all_organizations_list,}
+	
+	return render(request, 'mainapp/recommended.html', context)
 
 def category(request):
 	all_categories_list = Category.objects.order_by('name')
