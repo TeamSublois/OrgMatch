@@ -5,4 +5,5 @@ from . import views
 app_name = 'mainapp'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('category', views.category, name='category')
 ]
