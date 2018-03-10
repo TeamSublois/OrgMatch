@@ -2,7 +2,19 @@
 <html>
 <body>
     <h1>Hello DB</h1>
+    <hr>
+    <h3>for org 1</h3>
     {% for row in org1cats %}
+    <p>{{ row }}</p>
+    {% endfor %}
+    <hr>
+    <h3>for org 2</h3>
+    {% for row in org1cats %}
+    <p>{{ row }}</p>
+    {% endfor %}
+    <hr>
+    <h3>for all orgs</h3>
+    {% for row in rows %}
     <p>{{ row }}</p>
     {% endfor %}
 </body>

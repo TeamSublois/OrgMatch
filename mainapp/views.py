@@ -25,11 +25,16 @@ def db(request):
     for cat in cursor.fetchall():
         org1cats.append(cat)
 
-    print(org1cats)
+    i = 2
+    org2cats = []
+    cursor.execute('select mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
+    for cat in cursor.fetchall():
+        org1cats.append(cat)
 
     context = {
         'rows': rows,
         'org1cats': org1cats,
+        'org2cats': org2cats,
     }
 
     return render(request, 'mainapp/db.html', context)
