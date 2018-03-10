@@ -9,33 +9,23 @@
 	<link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
-<body style="width: 60%; margin: auto; margin-top: 3%;">
-	<h1 class="text-center">{{name}}</h1>
+<body>
+	<h1 class="text-center">{{org.name}}</h1>
 	<div class="container bg-light">
-		<img style="float: left;" src={{profile_picture}} width="20%"></img>
-		<div style="margin-left: 25%;">
-			<h2>{{city}}, {{state}}</h2>
-			<h5>{{bio}}</h5>
+		<img style="float: left;" src={{org.profile_picture}} width="20%"></img>
+		<div style="margin-left: 24%;">
+			<h2>{{org.city}}, {{org.state}}</h2>
+			<h5>{{org.bio}}</h5>
 		</div>
 		<div style="clear: both; margin-bottom: 2%;"></div>
 		<div class="row">
 			<div class="col-6">
-				<h3>Categories</h3>
-				{{% for category in categories %}}
-				<h5 style="display: inline; padding-right: 5%;">{{category}}</h5>
-				{{% endfor %}}
-			</div>
-			<div class="col-6">
 				<h3>Find Us At</h3>
-				<h5>social media</h5>
-				<h5>social media</h5>
+				<h5>Facebook: {{org.facebook}}</h5>
+				<h5>Facebook: {{org.twitter}}</h5>
+				<h5>Facebook: {{org.youtube}}</h5>
+				<h5>Facebook: {{org.instagram}}</h5>
 			</div>
-		</div>
-		<div>
-			<h3>Upcoming Events</h3>
-			{{% for event in events %}}
-			<img width="20%" src="http://lorempixel.com/300/200/" style="margin: 2%;"></img>
-			{{% endfor %}}
 		</div>
 	</div>
 </body>
