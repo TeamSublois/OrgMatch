@@ -5,26 +5,29 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
 <body>
 	<h1 class="text-center">{{org.name}}</h1>
 	<div class="container bg-light">
-		<img style="float: left;" src={{org.profile_picture}} width="20%"></img>
-		<div style="margin-left: 24%;">
-			<h2>{{org.city}}, {{org.state}}</h2>
-			<h5>{{org.bio}}</h5>
-		</div>
-		<div style="clear: both; margin-bottom: 2%;"></div>
+		<div style="padding-top: 1%;"></div>
 		<div class="row">
-			<div class="col-6">
-				<h3>Find Us At</h3>
-				<h5>Facebook: {{org.facebook}}</h5>
-				<h5>Facebook: {{org.twitter}}</h5>
-				<h5>Facebook: {{org.youtube}}</h5>
-				<h5>Facebook: {{org.instagram}}</h5>
+			<div class="col-2">
+				<img src="http://lorempixel.com/400/400" width="100%"></img>
+			</div>
+			<div class="col-10">
+				<div class="row" id="org-basic">
+					<h2>{{org.city}}, {{org.state}}</h2>
+					<a href="{{org.facebook}}" class="fa fa-facebook-square"></a>
+					<a href="{{org.twitter}}" class="fa fa-twitter"></a>
+					<a href="{{org.youtube}}" class="fa fa-youtube"></a>
+					<a href="{{org.instagram}}" class="fa fa-instagram"></a>
+				</div>
+				<div class="row">
+					<h5>{{org.bio}}</h5>
+				</div>
 			</div>
 		</div>
 	</div>

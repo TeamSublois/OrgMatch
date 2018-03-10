@@ -31,7 +31,7 @@ class Organization(models.Model):
   twitter = models.URLField(null=True, blank=True)
   youtube = models.URLField(null=True, blank=True)
   instagram = models.URLField(null=True, blank=True)
-L
+
   def __str__(self):
       return self.name
 
