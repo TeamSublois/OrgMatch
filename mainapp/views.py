@@ -8,13 +8,31 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserForm, VolunteerForm
 from .models import Category, Organization
+from django.db import connection
 
 
-def index(request):
-    user = request.user
-    context = {'user': user}
+def db(request):
 
-    return render(request, 'home.html', context)
+    cursor = connection.cursor()
+    cursor.execute('select mainapp_organization.name, mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id')
+    rows = []
+    for row in cursor.fetchall():
+        rows.append(row)
+
+    i = 1
+    org1cats = []
+    cursor.execute('select mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
+    for cat in cursor.fetchall():
+        org1cats.append(cat)
+
+    print(org1cats)
+
+    context = {
+        'rows': rows,
+        'org1cats': org1cats,
+    }
+
+    return render(request, 'mainapp/db.html', context)
 
 
 def register(request):

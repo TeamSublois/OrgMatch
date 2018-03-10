@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^register/$', views.register, name='register'),
     path('index/', views.index, name='index'),
     path('recommended/', views.recommended, name='recommended'),
-    path('category/', views.category, name='category')
+    path('category/', views.category, name='category'),
+    path('db/', views.db, name='db'),
 ]
