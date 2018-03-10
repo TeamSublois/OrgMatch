@@ -21,20 +21,27 @@ def db(request):
 
     i = 1
     org1cats = []
-    cursor.execute('select mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
+    cursor.execute('select mainapp_organization.name, mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
     for cat in cursor.fetchall():
         org1cats.append(cat)
 
     i = 2
     org2cats = []
-    cursor.execute('select mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
+    cursor.execute('select mainapp_organization.name, mainapp_category.name from mainapp_organization, mainapp_organization_categories INNER JOIN mainapp_category on mainapp_organization_categories.category_id = mainapp_category.id where mainapp_organization.id = ' + str(i))
     for cat in cursor.fetchall():
         org1cats.append(cat)
+
+    user2cats = []
+    cursor.execute('select mainapp_category.name as catname from mainapp_volunteer, mainapp_volunteer_category_list INNER JOIN mainapp_category on mainapp_volunteer_category_list.category_id = mainapp_category.id where user_id = ' + str(i) + ' ORDER BY catname')
+    for cat in cursor.fetchall():
+        user2cats.append(cat)
+
 
     context = {
         'rows': rows,
         'org1cats': org1cats,
         'org2cats': org2cats,
+        'user2cats': user2cats,
     }
 
     return render(request, 'mainapp/db.html', context)
