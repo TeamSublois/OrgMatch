@@ -12,15 +12,14 @@
 <body>
 	{% include "mainapp/nav.html" %}
 	
-	
 	<div class='results'>
 		<div class='title'>
 			Recommended For You
 
 		</div>
-	{% if all_organizations_list %}
+		{% if all_organizations_list %}
 
-	{% for organization in all_organizations_list %}
+		{% for organization in all_organizations_list %}
 
 		<div class='listing'>
 			<a href="/{{organization.id}}/">

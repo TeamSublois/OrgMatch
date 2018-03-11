@@ -14,14 +14,15 @@
 		
 		<div class="homepage">
 			{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-{% endif %}
+  				Hi {{ user.username }}!
+					<p><a href="{% url 'logout' %}">logout</a></p>
+				{% else %}
+					<p>You are not logged in.</p>
 
-			
-	{% include "mainapp/nav.html" %}
+			{% endif %}
+
+			{% include "mainapp/nav.html" %}
+
 			<div class="heading">
 				<div class="title">
 					OrgMatch Home Page
@@ -30,7 +31,7 @@
 					A web app by Team  s u b l o i s
 				</div>
 				<button class="signUp">
-					Signup
+					Sign up!
 				</button>
 			</div>
 			<div class="columns">
@@ -39,7 +40,7 @@
 						<div class="row">
 							{% for category in all_categories_list %}
 								<div class="col-md-4">
-									<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
+									<img src="{{ category.cover_image.url }}" alt="No image available" class="catImg"/>
 									<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
 								</div>
 							{% endfor %}
@@ -51,7 +52,7 @@
 			</div>
 			<div class="seeMore">
 				<button class="see" href="/category">
-					SEE MORE
+					See more!
 				</button>
 			</div>
 		</div>

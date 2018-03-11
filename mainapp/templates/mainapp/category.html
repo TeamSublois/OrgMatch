@@ -10,9 +10,18 @@
 	</head>
 
 	<body>
-		<div class="catgories">
+		<div class="categories">
 			
-	{% include "mainapp/nav.html" %}
+			{% if user.is_authenticated %}
+  				Hi {{ user.username }}!
+					<p><a href="{% url 'logout' %}">logout</a></p>
+				{% else %}
+					<p>You are not logged in.</p>
+					
+			{% endif %}
+
+			{% include "mainapp/nav.html" %}
+
 			<div class="title">
 				Browse All Categories
 			</div>
@@ -22,7 +31,7 @@
 						<div class="row">
 							{% for category in all_categories_list %}
 								<div class="col-md-4 category">
-									<input type="image" src="{{ category.cover_image.url }}" class="catImg"/>
+									<img src="{{ category.cover_image.url }}" alt="No image available" class="catImg"/>
 									<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
 								</div>
 							{% endfor %}
