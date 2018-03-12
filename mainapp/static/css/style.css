@@ -143,3 +143,14 @@ img {
 	margin: 2px;
 }
 
+.error {
+	display:inline-block;
+	justify-content: center;
+	text-align: center;
+}
+
+.center {
+	display:flex;
+	justify-content: center;
+	text-align: center;
+}
