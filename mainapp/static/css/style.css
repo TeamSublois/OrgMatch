@@ -14,6 +14,12 @@ p {
 body {
 	background: #e8e8e8;
 }
+
+.nf {
+	color: black;
+	text-decoration: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
