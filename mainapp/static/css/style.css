@@ -78,12 +78,7 @@ body {
 	max-width: 750px;
 }
 
-a {
-	display:flex;
-	text-decoration: none;
-	color:black;
 
-}
 
 .listing a {
 	width: auto;
@@ -153,4 +148,5 @@ img {
 	display:flex;
 	justify-content: center;
 	text-align: center;
+	flex-direction: column;
 }
