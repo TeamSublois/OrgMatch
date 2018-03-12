@@ -14,6 +14,12 @@ p {
 body {
 	background: #e8e8e8;
 }
+
+.nf {
+	color: black;
+	text-decoration: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -72,12 +78,7 @@ body {
 	max-width: 750px;
 }
 
-a {
-	display:flex;
-	text-decoration: none;
-	color:black;
 
-}
 
 .listing a {
 	width: auto;
@@ -137,3 +138,15 @@ img {
 	margin: 2px;
 }
 
+.error {
+	display:inline-block;
+	justify-content: center;
+	text-align: center;
+}
+
+.center {
+	display:flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+}
