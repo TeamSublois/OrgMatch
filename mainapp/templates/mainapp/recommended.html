@@ -29,13 +29,13 @@
 				<img src = "/static/images/defaultprofilepic.jpeg" />
 				{% endif %}
 				<div class='information'>
-					<h1 class='nf'>{{organization.name}}</h1>
-					<h2 class='nf'>{{organization.city}}</h2>
-					<p class='nf'>{{organization.bio}} </p>
+					<h1 class='noformat'>{{organization.name}}</h1>
+					<h2 class = 'noformat'>{{organization.city}}</h2>
+					<p class = 'noformat'>{{organization.bio}} </p>
 				</div>
 			</a>
 		</div>
-		{% endfor %}
+{% endfor %}
 
 	{% else %}
 	<div class='error'>
@@ -47,7 +47,8 @@
 		<img src="/static/images/sadboys-6743.jpeg" />
 		<img src="/static/images/sadboys-6743.jpeg" />
 		<div class='title'>
-			Uwu We made fucky wucky!! A wittle fucko boingo! The code monkeys at our headquarters are working VEWY HAWD to fix this!
+			Oopsie Woopsie! We couldn't find any organizations for you. Sorry!
+			<!--Uwu We made fucky wucky!! A wittle fucko boingo! The code monkeys at our headquarters are working VEWY HAWD to fix this!-->
 		</div>
 	</div>
 	{% endif %}

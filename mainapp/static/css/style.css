@@ -15,7 +15,7 @@ body {
 	background: #e8e8e8;
 }
 
-.nf {
+.noformat {
 	color: black;
 	text-decoration: none !important;
 }
@@ -81,7 +81,7 @@ body {
 
 
 .listing a {
-	width: auto;
+	width:auto;
 	text-decoration: none;
 }
 .navigation {
