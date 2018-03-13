@@ -11,17 +11,7 @@
 
 	<body>
 		<div class="categories">
-			
-			{% if user.is_authenticated %}
-  				Hi {{ user.username }}!
-					<p><a href="{% url 'logout' %}">logout</a></p>
-				{% else %}
-					<p>You are not logged in.</p>
-					
-			{% endif %}
-
 			{% include "mainapp/nav.html" %}
-
 			<div class="title">
 				Browse All Categories
 			</div>
