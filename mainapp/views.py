@@ -90,3 +90,8 @@ def organization(request, id):
 	template = loader.get_template('mainapp/org.html')
 	org = get_object_or_404(Organization, pk=id)
 	return render(request, 'mainapp/org.html', {"org": org})
+
+def volunteer(request, id):
+    template = loader.get_template('mainapp/volunteer/html')
+    vol = get_object_or_404(Volunteer, pk=id)
+    return render(request, 'mainapp/volunteer.html', {"volunteer": vol})

@@ -10,12 +10,12 @@
 
 </head>
 <body style="width: 60%; margin: auto; margin-top: 3%;">
-	<h1 class="text-center">{{first_name}} {{last_name}}'s Profile</h1>
+	<h1 class="text-center">{{vol.user.first_name}} {{vol.user.last_name}}'s Profile</h1>
 	<div class="container bg-light">
 		<img style="float: left;" src="http://lorempixel.com/400/400" width="20%"></img>
 		<div style="margin-left: 25%;">
-			<h2>{{city}}, {{state}}</h2>
-			<h5>{{bio}}</h5>
+			<h2>{{vol.city}}, {{vol.state}}</h2>
+			<h5>{{vol.bio}}</h5>
 		</div>
 		<div style="clear: both; margin-bottom: 2%;"></div>
 	</div>
