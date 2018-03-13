@@ -1,3 +1,4 @@
+
 body {
 	background: #e8e8e8;
 }
@@ -12,6 +13,9 @@ h4 {
 	background: #00848a;
 }
 
+.homepage{
+	display:block;
+}
 
 .nearOrg{
 	background: #d9d9d9;
@@ -24,6 +28,8 @@ h4 {
 	left: 0;
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	height: 600px;
+	position: relative;
 }
 
 .title{
@@ -42,7 +48,6 @@ h4 {
 
 .columns {
 	position: relative;
-	padding-top: 600px;
 	padding-bottom: 60px;
 	display: flex;
 	flex-flow: row wrap;
@@ -68,10 +73,7 @@ h4 {
 	margin-top: 85px;
 	margin-bottom: 70px;
 	border-radius: 6px;
-	font-size: 15px;
-	font-family: Arial;
-	font-weight: bold;
-	color: #2149b0; 
+	
 }
 
 .catName {
@@ -104,8 +106,5 @@ h4 {
 	border: 0;
 	padding: 15px;
 	border-radius: 6px;
-	font-size: 15px;
-	font-family: Arial;
-	font-weight: bold;
-	color: #2149b0; 
+	
 }
