@@ -16,7 +16,6 @@
 	<div class='results'>
 		<div class='title'>
 			Recommended For You
-
 		</div>
 	{% if all_organizations_list %}
 
@@ -30,16 +29,28 @@
 				<img src = "/static/images/defaultprofilepic.jpeg" />
 				{% endif %}
 				<div class='information'>
-					<h1>{{organization.name}}</h1>
-					<h2>{{organization.city}}</h2>
-					<p>{{organization.bio}} </p>
+					<h1 class='noformat'>{{organization.name}}</h1>
+					<h2 class = 'noformat'>{{organization.city}}</h2>
+					<p class = 'noformat'>{{organization.bio}} </p>
 				</div>
 			</a>
 		</div>
-		{% endfor %}
+{% endfor %}
 
 	{% else %}
-	<p>No polls are available.</p>
+	<div class='error'>
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<img src="/static/images/sadboys-6743.jpeg" />
+		<div class='title'>
+			Oopsie Woopsie! We couldn't find any organizations for you. Sorry!
+			
+		</div>
+	</div>
 	{% endif %}
 	</div> 
 
