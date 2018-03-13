@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+
+		<title>Home</title>
+	</head>
+
+	<body>
+		
+		<div class="homepage">
+			{% include "mainapp/nav.html" %}
+			<div class="heading">
+				<div class="title">
+					OrgMatch Home Page
+				</div>
+				<div class="tagline">
+					A web app by Team  s u b l o i s
+				</div>
+				<button class="signUp">
+					Sign up!
+				</button>
+			</div>
+			<div class="columns">
+				<div class="container">
+					{% if all_categories_list %}
+						<div class="row">
+							{% for category in all_categories_list %}
+								<div class="col-md-4">
+									<img src="{{ category.cover_image.url }}" alt="No image available" class="catImg"/>
+									<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
+								</div>
+							{% endfor %}
+						</div>
+					{% else %}
+						<p>No categories exist.</p>
+					{% endif %}
+				</div>
+			</div>
+			<div class="seeMore">
+				<button class="see" href="/category">
+					See more!
+				</button>
+			</div>
+		</div>
+	</body>
+</html>

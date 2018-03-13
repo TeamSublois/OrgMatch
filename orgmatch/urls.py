@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.conf.urls import url
+from mainapp import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls'))
+    url(r'^', include('mainapp.urls')),
+    path('a/', include('django.contrib.auth.urls'))
 ]
 
 if settings.DEBUG:

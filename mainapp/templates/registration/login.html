@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'/>
+	<title>Login</title>
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+
+</head>
+<body>
+	{% include "mainapp/nav.html" %}
+	
+	
+	<!--{% block title %}Login{% endblock %}-->
+
+	{% block content %}
+
+		<div class='title'>
+			Login to OrgMatch
+		</div>
+		
+
+		<div class='center'>
+		<form method="post">
+  			{% csrf_token %}
+  			{{ form.as_p }}
+  		<button type="submit button" class="btn btn-outline-secondary">Login</button>
+		
+		
+		</form>
+		<div class='title'>
+		<h5>New User? <a href="/register/">Sign Up!</h5></a>
+		</div>
+	</div>
+		{% endblock %}
+</body>
+</html>

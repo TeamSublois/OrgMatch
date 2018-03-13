@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% load static %}
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}" />
+
+        <title>Register</title>
+    </head>
+    <body>
+        <div class="signUp">
+            {% include "mainapp/nav.html" %}
+            <div class="container push">
+                <div class="row">
+                    <div class="col form-group">
+                        {% block content %}
+                                {% if registered %}
+                                    <div class="postRegister">
+                                        <div class="thankYou">
+                                            <h1>Thanks for registering on OrgMatch!</h1>
+                                        </div>
+                                        <a href="{% url 'login' %}" class="loginButton">Login now.</a>
+                                    </div>
+                                {% else %}
+                                    <div class="title">
+                                        <h2>Register for OrgMatch</h2>
+                                        <h5>We just need some information from you to begin generating suggestions for you!</h5>
+                                        <h6>Already registered?
+                                            <a href="{% url 'login' %}">
+                                                Click here.
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <form method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ user_form.as_p }}
+                                        {{ volunteer_form.as_p }}
+                                        <div class="exitDiv">
+                                            <button type="submit" class="exitButton">Register</button>
+                                        </div>
+                                {% endif %}
+                                    </form>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>

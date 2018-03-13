@@ -1,0 +1,65 @@
+body {
+	background: #e8e8e8;
+}
+
+h2 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.push {
+	margin-top: 50px;
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.exitDiv {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.exitButton {
+	outline: 0;
+	background: #ffc800;
+	width: 10%;
+	min-width: 90px;
+	border: 0;
+	padding: 15px;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #2149b0; 
+}
+
+.thankYou {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin-bottom: 100px;
+}
+
+.postRegister {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.loginButton {
+	outline: 0;
+	background: #ffc800;
+	width: 10%;
+	min-width: 90px;
+	border: 0;
+	padding: 15px;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #2149b0; 
+}
