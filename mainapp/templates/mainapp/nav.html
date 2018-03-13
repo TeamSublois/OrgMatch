@@ -1,3 +1,24 @@
+<!--
+<ul class="navigation">
+		<li class = 'home'><a href="/index/">Home</a></li>
+		<li class = 'browse'><a href="/recommended/">Browse</a></li>
+		<li class = 'search'><a href="/search/">Search</a></li>
+		<li class = 'me'><a href="/profile/">Me</a></li>
+	</ul>
+
+	<div class='separator'> </div> 
+-->
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <a class="navbar-brand" href="/">OrgMatch</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,7 +27,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/index/">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -17,15 +38,31 @@
         <a class="nav-link" href="/recommended/">Recommended</a>
       </li>
     </ul>
+    <!--
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-<ul class="navbar-nav">
-     
-      <li class="nav-item ml-sm-2 active">
-        <a class="nav-link" href="/profile/">My Profile</a>
+  -->
+<ul class="navbar-nav"> 
+    
+  {% if user.is_authenticated %}
+  
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profile'}">{{ user.username }}</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+{% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/register/">Sign Up</a>
+      </li>
+{% endif %}
   </ul>
   </div>
 </nav>
