@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.template import Context, loader
+from django.shortcuts import render, get_object_or_404
+from .models import Organization
+
 from .models import Organization
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -81,3 +84,9 @@ def category(request):
 	}
 
 	return render(request, 'mainapp/category.html', context)
+
+
+def organization(request, id):
+	template = loader.get_template('mainapp/org.html')
+	org = get_object_or_404(Organization, pk=id)
+	return render(request, 'mainapp/org.html', {"org": org})

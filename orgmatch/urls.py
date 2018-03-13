@@ -24,6 +24,7 @@ from mainapp import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('', include('mainapp.urls'))
     url(r'^', include('mainapp.urls')),
     path('a/', include('django.contrib.auth.urls'))
 ]
