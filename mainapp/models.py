@@ -45,6 +45,7 @@ class Event(models.Model):
     def __str__(self):
         return self.name
 
+
 class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=140, default="My bio...")

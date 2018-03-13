@@ -10,7 +10,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserForm, VolunteerForm
-from .models import Category, Organization
+from .models import Category, Organization, Volunteer
 
 
 def index(request):
@@ -90,3 +90,9 @@ def organization(request, id):
 	template = loader.get_template('mainapp/org.html')
 	org = get_object_or_404(Organization, pk=id)
 	return render(request, 'mainapp/org.html', {"org": org})
+
+
+def volunteer(request, id):
+    template = loader.get_template('mainapp/volunteer.html')
+    vol = get_object_or_404(Volunteer, pk=id)
+    return render(request, 'mainapp/volunteer.html', {"vol": vol})
