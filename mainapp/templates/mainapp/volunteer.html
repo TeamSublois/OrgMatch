@@ -12,25 +12,12 @@
 <body style="width: 60%; margin: auto; margin-top: 3%;">
 	<h1 class="text-center">{{first_name}} {{last_name}}'s Profile</h1>
 	<div class="container bg-light">
-		<img style="float: left;" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/UCSD_Tritons_logo.svg/1200px-UCSD_Tritons_logo.svg.png" width="20%"></img>
+		<img style="float: left;" src="http://lorempixel.com/400/400" width="20%"></img>
 		<div style="margin-left: 25%;">
 			<h2>{{city}}, {{state}}</h2>
 			<h5>{{bio}}</h5>
 		</div>
 		<div style="clear: both; margin-bottom: 2%;"></div>
-		<div class="row">
-			<div class="col-6">
-				<h3>Interested Categories</h3>
-				{{% for category in category_list %}}
-				<h5 style="display: inline; padding-right: 5%;">{{category}}</h5>
-			</div>
-		</div>
-		<div>
-			<h3>Fav Orgs</h3>
-			{{% for org in fav_org_list %}}
-			<img width="20%" src="http://lorempixel.com/300/200/" style="margin: 2%;"></img>
-			{{% endfor %}}
-		</div>
 	</div>
 </body>
 </html>
