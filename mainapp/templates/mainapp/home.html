@@ -13,7 +13,11 @@
 	<body>
 		
 		<div class="homepage">
+			
+
 			{% include "mainapp/nav.html" %}
+			
+
 			<div class="heading">
 				<div class="title">
 					OrgMatch Home Page
@@ -21,10 +25,12 @@
 				<div class="tagline">
 					A web app by Team  s u b l o i s
 				</div>
-				<button class="signUp">
-					Sign up!
-				</button>
+
+				<form>
+				<a class="btn btn-warning signUp btn-lg" href="/register" role="button">Sign up!</a>
+				</form>
 			</div>
+			
 			<div class="columns">
 				<div class="container">
 					{% if all_categories_list %}
@@ -42,9 +48,7 @@
 				</div>
 			</div>
 			<div class="seeMore">
-				<button class="see" href="/category">
-					See more!
-				</button>
+				<a class="btn btn-warning see bt-lg" href="/category" role="button">See more</a>
 			</div>
 		</div>
 	</body>

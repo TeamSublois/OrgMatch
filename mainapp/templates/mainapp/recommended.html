@@ -21,7 +21,7 @@
 		{% for organization in all_organizations_list %}
 
 		<div class='listing'>
-			<a href="/{{organization.id}}/">
+			<a id='listlink' href="/org/{{organization.id}}">
 				{% if organization.profile_picture %} 
 				<img src="{{organization.profile_picture.url}}" />
 				{% else %}
@@ -29,12 +29,12 @@
 				{% endif %}
 				<div class='information'>
 					<h1 class='noformat'>{{organization.name}}</h1>
-					<h2 class = 'noformat'>{{organization.city}}</h2>
-					<p class = 'noformat'>{{organization.bio}} </p>
+					<h2 class='noformat'>{{organization.city}}</h2>
+					<p class='noformat'>{{organization.bio}} </p>
 				</div>
 			</a>
 		</div>
-{% endfor %}
+		{% endfor %}
 
 	{% else %}
 	<div class='error'>
@@ -47,7 +47,6 @@
 		<img src="/static/images/sadboys-6743.jpeg" />
 		<div class='title'>
 			Oopsie Woopsie! We couldn't find any organizations for you. Sorry!
-			
 		</div>
 	</div>
 	{% endif %}
