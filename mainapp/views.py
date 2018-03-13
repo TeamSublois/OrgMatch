@@ -52,30 +52,32 @@ def register(request):
 
 @login_required
 def user_logout(request):
-    logout(request)
-    return HttpResponseRedirect(reverse('index'))
+	logout(request)
+
+	return HttpResponseRedirect(reverse('index'))
 
 
 def index(request):
-    all_categories_list = Category.objects.order_by('name')[:3]
-    context = {'all_categories_list':all_categories_list}
+	all_categories_list = Category.objects.order_by('name')[:3]
 
-    return render(request, 'mainapp/home.html', context)
+	context = {'all_categories_list':all_categories_list}
+
+	return render(request, 'mainapp/home.html', context)
 
 
 def recommended(request):
+	all_organizations_list = Organization.objects.order_by('city')[:100]
 
-    all_organizations_list = Organization.objects.order_by('city')[:100]
-    context = {'all_organizations_list': all_organizations_list,}
+	context = {'all_organizations_list': all_organizations_list,}
 
-    return render(request, 'mainapp/recommended.html', context)
+	return render(request, 'mainapp/recommended.html', context)
 
 
 def category(request):
-    all_categories_list = Category.objects.order_by('name')
+	all_categories_list = Category.objects.order_by('name')
 
-    context = {
-        'all_categories_list':all_categories_list
-    }
+	context = {
+		'all_categories_list':all_categories_list
+	}
 
-    return render(request, 'mainapp/category.html', context)
+	return render(request, 'mainapp/category.html', context)
