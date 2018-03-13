@@ -48,10 +48,10 @@ class Event(models.Model):
 
 class Volunteer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=140, default="My bio...")
+    bio = models.CharField(max_length=140)
     profile_picture = models.ImageField(upload_to='mainapp/images/volunteer/', max_length=100, blank=True)
-    city = models.CharField(max_length=30, default="La Jolla")
-    state = models.ForeignKey(State, on_delete=models.CASCADE, default=1)
+    city = models.CharField(max_length=30)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
     category_list = models.ManyToManyField(Category, blank=True)
     fav_org_list = models.ManyToManyField(Organization, blank=True)
 
