@@ -92,6 +92,11 @@ body {
 	max-width: 750px;
 }
 
+#listlink{
+	display:flex;
+	text-decoration: none;
+	color:black;
+}
 
 
 .listing a {
