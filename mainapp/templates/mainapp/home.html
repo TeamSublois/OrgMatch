@@ -20,14 +20,14 @@
 
 			<div class="heading">
 				<div class="title">
-					OrgMatch Home Page
+					OrgMatch
 				</div>
 				<div class="tagline">
 					A web app by Team  s u b l o i s
 				</div>
 
 				<form>
-				<a class="btn btn-warning signUp btn-lg" href="/register" role="button">Sign up!</a>
+				<a class="btn btn-primary signUp btn-lg col-6" href="/register" role="button">Sign up!</a>
 				</form>
 			</div>
 			
@@ -38,7 +38,9 @@
 							{% for category in all_categories_list %}
 								<div class="col-md-4">
 									<img src="{{ category.cover_image.url }}" alt="No image available" class="catImg"/>
-									<button class="catName" href="/{{ category.id }}/" >{{ category.name }}</button>
+									<button class="catName col-12" href="/{{ category.id }}/" >
+										{{ category.name }}
+									</button>
 								</div>
 							{% endfor %}
 						</div>
@@ -48,7 +50,7 @@
 				</div>
 			</div>
 			<div class="seeMore">
-				<a class="btn btn-warning see bt-lg" href="/category" role="button">See more</a>
+				<a class="btn btn-secondary see bt-lg col-6" href="/category" role="button">See more</a>
 			</div>
 		</div>
 	</body>
